@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:prueba3/gradient_profile.dart';
-import 'description_profile.dart';
+import 'profile_places.dart';
 
 class ProfileTrips extends StatelessWidget{
-  String pathImage='assets/img/people.jpg';
-  String descriptionDummy="Este es un bonito lugar para salir a pasear con la familia blblblblblblblbllblblblbbbblbl"
-      "blblblblblblblblblblblblblblblb"
-      "bklblbkbkbkbbbbbbbbbbbbbbbbbbbbbbbbbb";
-  String name="Varuna Yasas";
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(
-      children: <Widget>[
-        GradientProfile("Profile"),
-        DescriptionProfile(pathImage,name,"prueba","cometanio"),
-      ],
-    );
-      DescriptionProfile(pathImage,name,"prueba","cometanio");
-     return Scaffold(
-       //appBar: AppBar(title:Text("hola")),
-
-       body: new DescriptionProfile(pathImage,"Maria","prueba","cometanio")
-     );
-  }
+@override
+Widget build(BuildContext context) {
+// TODO: implement build
+return Stack(
+children: [
+Container(
+height:350.0,
+decoration: BoxDecoration(
+gradient: LinearGradient(
+colors: [
+Color(0xFF4268D3),
+Color(0xFF584CD1)
+],
+begin: FractionalOffset(0.2, 0.0),
+end: FractionalOffset(1.0, 0.6),
+stops: [0.0, 0.6],
+tileMode: TileMode.clamp
+)
+),
+alignment: Alignment(-0.9, -0.6),
+),
+ProfilePlaces()
+],
+);
+}
 
 }
